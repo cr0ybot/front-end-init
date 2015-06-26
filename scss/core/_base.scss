@@ -1,0 +1,38 @@
+//
+// Base
+//
+// Direct element styles
+//
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {}
+
+body {
+    font-size: 100%;
+    color: $color-foreground;
+    font-family: sans-serif;
+    line-height: $base-line-height;
+}
+
+a {
+    color: $color-link;
+
+    &:hover, &:focus {}
+}
+
+button {
+    cursor: pointer;
+}
+
+section {}
+
+article {}
+
+aside {}
+
+form {}
+
+table {}

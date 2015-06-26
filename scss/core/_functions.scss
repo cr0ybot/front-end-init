@@ -1,0 +1,10 @@
+//
+// Functions
+//
+
+
+// Colors
+$colors: () !default;
+@function color($key) {
+    @return map-get($colors, $key);
+}
