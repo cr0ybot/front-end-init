@@ -1,7 +1,7 @@
 Front-End Init
 ==============
 
-A starter front-end project template with NPM, Grunt, Sass, and Autoprefixer.
+A starter front-end project template with NPM, Grunt, Bower, Sass, and Autoprefixer.
 
 This was inspired by my other starter kit, [compass-pack](https://github.com/cr0ybot/compass-pack), which is much lighter on the included tools. I've since moved away from Compass, since I found I wasn't using its mixins much at all, and I was bothered by the config.rb hack for including autoprefixer. I wanted a workflow that I had more control over, and I think Grunt was a good choice.
 
@@ -24,7 +24,6 @@ scss/
 │   ├───_base.scss
 │   ├───_functions.scss
 │   ├───_mixins.scss
-│   ├───_settings.scss
 │   ├───_typography.scss
 │   └───_util.scss
 ├───layout/
@@ -35,9 +34,15 @@ scss/
 │   └───_nav.scss
 ├───pages/
 │   └───index.scss
+├───_settings.scss
 └───styles.scss
+bower.json
+Gruntfile.js
 index.html
+package.json
 ```
+
+## Notes
 
 ### Components vs. Modules
 
@@ -76,14 +81,14 @@ It's likely that you'll have at least one page that is so unique that it would b
 
 I've included grunt-modernizr, but not the modernizr-dev.js file. I don't see any benefit to mirroring here what will be an outdated version next time I pull this template, so I'm assuming you'll use your own or a remote file through a CDN for development (to be switched out for the generated one in production).
 
-### A Note on Print Styles
+### Print Styles
 
 Some project templates out there include a screen and print file as the main outputs. I've decided to stick with one main styles file and include `@media print` declarations where necessary throughout.
 
-### A Note on Sass
+### Sass Compiler
 
 I am using LibSass tentatively, but it might not be compatible in all instances. Simply run `npm uninstall grunt-sass` and `npm install grunt-contrib-sass --save-dev` in your project folder to switch to Ruby Sass (you must also ensure Ruby is installed on your system). You'll also have to change some options in the Gruntfile sass object: `sourceMap` -> `sourcemap` & `outputStyle` -> `style`.
 
-### A note on lib folders
+### Lib Folders
 
-I almost included lib folders in the js and scss directories, but I'm instead only including Bower and grunt-bower-task, which allows me to specify front-end dependencies wihtout including copies of them in the repo, and the grunt task will pull the respective dependencies into the lib folder.
+I almost included lib folders in the js and scss directories, but I'm instead using Bower and grunt-bower-task, which allows me to specify front-end dependencies without including copies of them in the repo. The grunt task will pull the respective dependencies into the lib folder. At some point I'd like to figure out how to specify mappy-breakpoints and normalize-scss as dev dependencies and have them copied to a different folder like "libdev".

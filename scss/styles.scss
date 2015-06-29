@@ -4,15 +4,18 @@
 
 // The main output file. Import everything you need here.
 
+// Settings
+@import "settings";
+
 // Bower Libs
-@import "../lib/mappy-breakpoints/mappy-breakpoints";
+// change to "../lib/js/foo" when grunt-bower-task fixes byType https://github.com/yatskevich/grunt-bower-task/issues/149
+@import "../lib/normalize-scss/normalize",
+        "../lib/mappy-breakpoints/mappy-breakpoints";
 
 // Core
-@import "core/settings",
-        "core/functions",
+@import "core/functions",
         "core/mixins",
         "core/fonts",
-        "core/normalize",
         "core/base",
         "core/typography",
         "core/util";
