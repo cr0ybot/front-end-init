@@ -1,6 +1,6 @@
 {
   "name": "front-end-init",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Starting point for front-end dev projects. Change this description!",
   "main": "Gruntfile.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/cr0ybot/front-end-init.git"
   },
-  "author": "Cory Hughart",
+  "author": "Cory Hughart <cr0ybot@gmail.com>",
   "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/cr0ybot/front-end-init/issues"
@@ -19,7 +19,6 @@
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
-    "grunt-bower-task": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-modernizr": "^0.6.0",
     "grunt-postcss": "^0.5.3",

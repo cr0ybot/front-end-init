@@ -8,9 +8,8 @@
 @import "settings";
 
 // Bower Libs
-// change to "../lib/js/foo" when grunt-bower-task fixes byType https://github.com/yatskevich/grunt-bower-task/issues/149
-@import "../lib/normalize-scss/normalize",
-        "../lib/mappy-breakpoints/mappy-breakpoints";
+@import "../bower_components/normalize-scss/normalize",
+        "../bower_components/mappy-breakpoints/mappy-breakpoints";
 
 // Core
 @import "core/functions",

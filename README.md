@@ -7,7 +7,7 @@ This was inspired by my other starter kit, [compass-pack](https://github.com/cr0
 
 ## Startup
 
-Download these files or fetch the git repo. Then, (as long as you've got node/npm, grunt, and bower installed) all you should have to do to get up and running is `npm install`, `bower install`, and `grunt bower`. You might also want to do an `npm update`, depending on when this repo was last updated.
+Download these files or fetch the git repo. Then, (as long as you've got node/npm, grunt, and bower installed) all you should have to do to get up and running is `npm install`, and `bower install`. You might also want to do an `npm update`, depending on when this repo was last updated.
 
 ## Folders and Files
 
@@ -17,7 +17,6 @@ fonts/
 img/
 js/
 └───scripts.js
-lib/
 scss/
 ├───components/
 ├───core/
@@ -89,6 +88,6 @@ Some project templates out there include a screen and print file as the main out
 
 I am using LibSass tentatively, but it might not be compatible in all instances. Simply run `npm uninstall grunt-sass` and `npm install grunt-contrib-sass --save-dev` in your project folder to switch to Ruby Sass (you must also ensure Ruby is installed on your system). You'll also have to change some options in the Gruntfile sass object: `sourceMap` -> `sourcemap` & `outputStyle` -> `style`.
 
-### Lib Folders
+### Bower
 
-I almost included lib folders in the js and scss directories, but I'm instead using Bower and grunt-bower-task, which allows me to specify front-end dependencies without including copies of them in the repo. The grunt task will pull the respective dependencies into the lib folder. At some point I'd like to figure out how to specify mappy-breakpoints and normalize-scss as dev dependencies and have them copied to a different folder like "libdev".
+I removed the npm package `grunt-bower-task` as the functionality I was looking for is currently broken (as of v0.4.0). I also realized that it was entirely unnecessary to be using something that copies bower components to another folder at this point, since the components I'm including are all development dependencies and can be linked to just fine in the `bower_components` folder.
