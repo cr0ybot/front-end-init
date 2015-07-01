@@ -2,17 +2,20 @@
 // Settings
 //
 
-$base-font-size: 16px;
-$base-line-height: 1.25;
-$base-font-family: sans-serif;
-$base-spacing: 1em;
-
 // Colors
 $colors: (
     'white': #FFF,
     'black': #000,
     'grey': #888
 );
+
+// color map util
+@function color($key) {
+    @if not map-has-key($colors, $key) {
+        @warn "$colors key `#{$key}` not found.";
+    }
+    @return map-get($colors, $key);
+}
 
 $color-background: color('white');
 $color-foreground: color('black');
@@ -27,6 +30,12 @@ $breakpoints: (
     'x-large': 1200px,
     'huge': 1900px
 );
+
+// Base
+$base-font-size: 16px;
+$base-line-height: 1.25;
+$base-font-family: sans-serif;
+$base-spacing: 1em;
 
 // Normalize
 $legacy_browser_support: true;
