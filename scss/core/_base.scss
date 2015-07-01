@@ -13,7 +13,7 @@ html, body {}
 body {
     font-size: 100%;
     color: $color-foreground;
-    font-family: sans-serif;
+    font-family: $base-font-family;
     line-height: $base-line-height;
 }
 

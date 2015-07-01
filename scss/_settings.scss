@@ -4,13 +4,15 @@
 
 $base-font-size: 16px;
 $base-line-height: 1.25;
+$base-font-family: sans-serif;
+$base-spacing: 1em;
 
 // Colors
 $colors: (
     'white': #FFF,
     'black': #000,
     'grey': #888
-)
+);
 
 $color-background: color('white');
 $color-foreground: color('black');
@@ -24,7 +26,7 @@ $breakpoints: (
     'large': 960px,
     'x-large': 1200px,
     'huge': 1900px
-)
+);
 
 // Normalize
 $legacy_browser_support: true;
