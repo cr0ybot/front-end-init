@@ -1,6 +1,6 @@
 {
   "name": "front-end-init",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Starting point for front-end dev projects. Change this description!",
   "main": "Gruntfile.js",
   "scripts": {

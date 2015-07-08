@@ -44,7 +44,7 @@ module.exports = function(grunt) {
             dev: {
                 options:{
                     outputStyle:'expanded',
-                    sourceMap: 'auto'
+                    sourceMap: true
                 },
                 files: [{
                     expand: true,
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
                 dist: {
                 options: {
                     outputStyle:'compressed',
-                    sourceMap: 'none'
+                    sourceMap: false
                 },
                 files: [{
                     expand: true,
@@ -103,6 +103,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default',['sass:dev','watch']);
+    grunt.registerTask('default',['sass:dev','postcss:dev','watch']);
     grunt.registerTask('build',['bower:install','sass:dist','postcss:dist','modernizr:dist']);
 };
