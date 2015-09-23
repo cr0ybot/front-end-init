@@ -53,8 +53,8 @@ module.exports = function(grunt) {
                     dest: 'css',
                     ext: '.css'
                 }]
-                },
-                dist: {
+            },
+            dist: {
                 options: {
                     outputStyle:'compressed',
                     sourceMap: false
@@ -92,17 +92,42 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            options: {
+                files: [{
+                    expand: true,
+                    cwd: 'js',
+                    src: ['**/*.js'],
+                    dest: 'js',
+                    ext: '.min.js'
+                }]
+            },
+            dev: {
+                sourceMap: true
+            },
+            dist: {
+                sourceMap: false
+            }
+        },
+
         watch: {
             options: {
-                //livereload: true
+                livereload: true
+            },
+            html: {
+                files: '**/*.html'
             },
             css: {
                 files: 'scss/**/*.scss',
                 tasks: ['sass:dev', 'postcss:dev']
+            },
+            js: {
+                files: 'js/**/*.js',
+                tasks: ['uglify:dev']
             }
         }
     });
 
     grunt.registerTask('default',['sass:dev','postcss:dev','watch']);
-    grunt.registerTask('build',['bower:install','sass:dist','postcss:dist','modernizr:dist']);
+    grunt.registerTask('build',['bower:install','sass:dist','postcss:dist','uglify:dist','modernizr:dist']);
 };

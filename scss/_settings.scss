@@ -21,16 +21,6 @@ $color-background: color('white');
 $color-foreground: color('black');
 $color-link: color('grey');
 
-// Breakpoints
-$breakpoints: (
-    'tiny': 320px,
-    'small': 480px,
-    'medium': 720px,
-    'large': 960px,
-    'x-large': 1200px,
-    'huge': 1900px
-);
-
 // Base
 $base-font-size: 16px;
 $base-line-height: 1.25;
@@ -39,3 +29,17 @@ $base-spacing: 1em;
 
 // Normalize
 $legacy_browser_support: true;
+
+// Breakpoint
+@include breakpoint-set('no query fallbacks', true);
+@include breakpoint-set('to ems', true);
+
+//$breakpoints: ();
+@include add-breakpoint('medium', 560px);
+@include add-breakpoint('large', 769px);
+@include add-breakpoint('medium-large', 560px 768px);
+@include add-breakpoint('large-max', (max-width: 768px));
+@include add-breakpoint('larger', 1000px);
+@include add-breakpoint('huge', 1200px);
+@include add-breakpoint('portrait', (orientation: portrait));
+@include add-breakpoint('landscape', (orientation: landscape));

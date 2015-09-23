@@ -4,12 +4,12 @@
 
 // The main output file. Import everything you need here.
 
-// Settings
-@import "settings";
-
 // Bower Libs
 @import "../bower_components/normalize-scss/normalize",
-        "../bower_components/mappy-breakpoints/mappy-breakpoints";
+        "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+// Settings
+@import "settings";
 
 // Core
 @import "core/functions",
