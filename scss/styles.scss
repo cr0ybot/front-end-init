@@ -8,23 +8,19 @@
 @import "../bower_components/normalize-scss/normalize",
         "../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
-// Settings
-@import "settings";
-
 // Core
-@import "core/functions",
+@import "core/settings",
+		"core/functions",
         "core/mixins",
         "core/fonts",
         "core/base",
         "core/typography",
         "core/util";
 
-// Layout
-@import "layout/global";
-
 // Components
 @import "components/links",
-        "components/buttons";
+        "components/buttons",
+        "components/forms";
 
 // Modules
 @import "modules/header",
