@@ -19,21 +19,23 @@ js/
 └───scripts.js
 scss/
 ├───components/
+│   ├───_buttons.scss
+│   ├───_forms.scss
+│   └───_links.scss
 ├───core/
 │   ├───_base.scss
 │   ├───_functions.scss
+│   ├───_layout.scss
 │   ├───_mixins.scss
+│   ├───_settings.scss
 │   ├───_typography.scss
 │   └───_util.scss
-├───layout/
-│   └───_global.scss
 ├───modules/
 │   ├───_footer.scss
 │   ├───_header.scss
 │   └───_nav.scss
 ├───pages/
 │   └───index.scss
-├───_settings.scss
 └───styles.scss
 bower.json
 Gruntfile.js
@@ -47,9 +49,9 @@ package.json
 
 In some other Sass project templates, "modules" and "components" seem to be used interchangeably. I'm explicitly using both, with a critical distinction:
 
-*Modules* are parts of a site that can be made up of many elements, but are also fairly self-contained, such as the site's header, footer, and nav, or other blocks of predictable content.
+*Modules* are repeatable parts of a site that can be made up of many elements, but are also fairly self-contained, such as the site's header, footer, and nav, or other blocks of predictable content. Modules may contain components or even other modules.
 
-*Components* are basically just elements themselves, but not necessarily base element styles (those go in core/\_base.scss). These are elements with specific classes, such as various button or link styles.
+*Components* are indivisible parts of a site at the most basic levels, almost just elements themselves, but not necessarily base element styles (those go in core/\_base.scss). These are elements with specific classes, such as various button or link styles.
 
 ### Layout & Skin
 
@@ -70,7 +72,7 @@ I have decided not to split the `modules` into `layout` and `skin` folders like 
 }
 ```
 
-There is, however, a layout folder, for things specifically concerning layout elements such as the ubiquitous `.content` or `.container` classes. I would also put grid frameworks here, if I used them much.
+There is, however, a layout file in `/core`, for things specifically concerning layout elements such as the ubiquitous `.content` or `.container` classes. I would also put grid frameworks here, if I used them much.
 
 ### Pages
 
