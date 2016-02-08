@@ -6,14 +6,17 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        bower: {
-            install: {}
-        },
-
         modernizr: {
             dist: {
                 'devFile' : 'remote',
-                'outputFile' : 'lib/js/modernizr.js',
+                'outputFile' : 'js/modernizr.min.js',
+                'options' : [
+                    'setClasses',
+                    'addTest',
+                    'html5printshiv',
+                    'testProp',
+                    'fnBind'
+                ],
                 'extra' : {
                     'shiv' : true,
                     'printshiv' : false,
@@ -36,7 +39,12 @@ module.exports = function(grunt) {
                 'tests' : [],
                 'parseFiles' : true,
                 'matchCommunityTests' : false,
-                'customTests' : []
+                'customTests' : [],
+                'files' : {
+                    'src': [
+                        '{js,scss}/**/*.{js,css,scss}'
+                    ]
+                }
             }
         },
 
@@ -73,7 +81,7 @@ module.exports = function(grunt) {
             options: {
                 remove: false,
                 processors: [
-                    require('autoprefixer-core')({
+                    require('autoprefixer')({
                         browsers: ['> 1%', 'last 2 versions']
                     })
                 ]
@@ -88,7 +96,7 @@ module.exports = function(grunt) {
                 options: {
                     map: false
                 },
-                src: 'css/*.css'
+                src: 'css/*.min.css'
             }
         },
 
@@ -97,7 +105,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'js',
-                    src: ['**/*.js'],
+                    src: ['**/*.js', '!**/*.min.js'],
                     dest: 'js',
                     ext: '.min.js'
                 }]
@@ -115,7 +123,7 @@ module.exports = function(grunt) {
                 livereload: true
             },
             html: {
-                files: '**/*.html'
+                files: ['**/*.html', '**/*.php']
             },
             css: {
                 files: 'scss/**/*.scss',
@@ -129,5 +137,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default',['sass:dev','postcss:dev','watch']);
-    grunt.registerTask('build',['bower:install','sass:dist','postcss:dist','uglify:dist','modernizr:dist']);
+    grunt.registerTask('build',['sass:dist','postcss:dist','uglify:dist','modernizr:dist']);
 };
