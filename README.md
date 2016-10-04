@@ -1,7 +1,7 @@
 Front-End Init
 ==============
 
-A starter front-end project template with NPM, Grunt, Bower, Sass, and Autoprefixer.
+A starter front-end project template with NPM, Grunt, Sass, and Autoprefixer.
 
 This was inspired by my other starter kit, [compass-pack](https://github.com/cr0ybot/compass-pack), which is much lighter on the included tools. I've since moved away from Compass, since I found I wasn't using its mixins much at all, and I was bothered by the config.rb hack for including autoprefixer. I wanted a workflow that I had more control over, and I think Grunt was a good choice.
 
