@@ -7,7 +7,7 @@ This was inspired by my other starter kit, [compass-pack](https://github.com/cr0
 
 ## Startup
 
-Download these files or fetch the git repo. Then, (as long as you've got node/npm, grunt, and bower installed) all you should have to do to get up and running is `npm install`, and `bower install`. You might also want to do an `npm update`, depending on when this repo was last updated.
+Download these files or fetch the git repo. Then, (as long as you've got node/npm and grunt installed) all you should have to do to get up and running is `npm install`. You might also want to do an `npm update`, depending on when this repo was last updated.
 
 ## Folders and Files
 
@@ -24,20 +24,24 @@ scss/
 │   └───_links.scss
 ├───core/
 │   ├───_base.scss
-│   ├───_functions.scss
+│   ├───_fonts.scss
 │   ├───_layout.scss
-│   ├───_mixins.scss
-│   ├───_settings.scss
 │   ├───_typography.scss
-│   └───_util.scss
 ├───modules/
 │   ├───_footer.scss
 │   ├───_header.scss
 │   └───_nav.scss
 ├───pages/
-│   └───index.scss
+│   └───_home.scss
+├───settings/
+│   ├───_breakpoints.scss
+│   ├───_colors.scss
+│   └───_general.scss
+├───util/
+│   ├───_functions.scss
+│   ├───_misc.scss
+│   └───_mixins.scss
 └───styles.scss
-bower.json
 Gruntfile.js
 index.html
 package.json
@@ -72,11 +76,11 @@ I have decided not to split the `modules` into `layout` and `skin` folders like 
 }
 ```
 
-There is, however, a layout file in `/core`, for things specifically concerning layout elements such as the ubiquitous `.content` or `.container` classes. I would also put grid frameworks here, if I used them much.
+There is, however, a layout file in `/core`, for things specifically concerning layout elements such as the ubiquitous `.content` or `.container` classes. I would also put grid frameworks here, if I used them.
 
 ### Pages
 
-It's likely that you'll have at least one page that is so unique that it would be silly to include its styles on every page. Usually it's the index page, which I've already included. Just remember that in each unique page's HTML you need to link the separate CSS files that are generated in the `/css/pages/` folder.
+Unique page styles get their own partial files here, and they are still included in the main styles.scss. There isn't much reason to output separate files for specific page styles; once the main css file is downloaded by the browser it will have all of the styles for the site, so there are no extra file downloads on each page.
 
 ### Modernizr
 
@@ -88,8 +92,8 @@ Some project templates out there include a screen and print file as the main out
 
 ### Sass Compiler
 
-I am using LibSass tentatively, but it might not be compatible in all instances. Simply run `npm uninstall grunt-sass` and `npm install grunt-contrib-sass --save-dev` in your project folder to switch to Ruby Sass (you must also ensure Ruby is installed on your system). You'll also have to change some options in the Gruntfile sass object: `sourceMap` -> `sourcemap` & `outputStyle` -> `style`.
+This is a grunt-sass template which uses LibSass. There are no good reasons left to use Ruby Sass. It's 4000% faster, and as of LibSass 3.3, there are no incompatibilities listed on the (Sass Compatibility site)[sass-compatibility.github.io].
 
 ### Bower
 
-I removed the npm package `grunt-bower-task` as the functionality I was looking for is currently broken (as of v0.4.0). I also realized that it was entirely unnecessary to be using something that copies bower components to another folder at this point, since the components I'm including are all development dependencies and can be linked to just fine in the `bower_components` folder.
+I removed bower. I'm not sure why I though I needed another dependency in the first place; all of the bower modules I was using are in the npm repos as well, and they're dev dependencies anyways.

@@ -101,7 +101,8 @@ module.exports = function(grunt) {
         },
 
         uglify: {
-            options: {
+            dev: {
+                sourceMap: true,
                 files: [{
                     expand: true,
                     cwd: 'js',
@@ -110,11 +111,15 @@ module.exports = function(grunt) {
                     ext: '.min.js'
                 }]
             },
-            dev: {
-                sourceMap: true
-            },
             dist: {
-                sourceMap: false
+                sourceMap: false,
+                files: [{
+                    expand: true,
+                    cwd: 'js',
+                    src: ['**/*.js', '!**/*.min.js'],
+                    dest: 'js',
+                    ext: '.min.js'
+                }]
             }
         },
 

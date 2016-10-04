@@ -4,18 +4,25 @@
 
 // The main output file. Import everything you need here.
 
-// Bower Libs
-@import "../bower_components/normalize-scss/normalize",
-        "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+// NPM Libs
+@import "../node_modules/normalize-scss/sass/normalize",
+        "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+// Settings
+@import "settings/colors",
+        "settings/general",
+        "settings/breakpoints";
+
+// Utilities
+@import "util/functions",
+        "util/mixins",
+        "util/misc";
 
 // Core
-@import "core/settings",
-        "core/functions",
-        "core/mixins",
-        "core/fonts",
+@import "core/fonts",
         "core/base",
         "core/typography",
-        "core/util";
+        "core/layout";
 
 // Components
 @import "components/links",
@@ -26,3 +33,5 @@
 @import "modules/header",
         "modules/nav",
         "modules/footer";
+
+@import "pages/home";

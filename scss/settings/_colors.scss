@@ -1,0 +1,21 @@
+//
+// Color Settings
+// 
+
+$colors: (
+    'white': #FFF,
+    'black': #000,
+    'grey': #888
+);
+
+// color map util
+@function color($key) {
+    @if not map-has-key($colors, $key) {
+        @warn "$colors key `#{$key}` not found.";
+    }
+    @return map-get($colors, $key);
+}
+
+$color-background: color('white');
+$color-foreground: color('black');
+$color-link: color('grey');

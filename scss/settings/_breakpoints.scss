@@ -1,0 +1,20 @@
+//
+// Breakpoints
+// Using breakpoint-sass: http://breakpoint-sass.com/
+// 
+
+@include breakpoint-set('no query fallbacks', true);
+@include breakpoint-set('to ems', true);
+
+//$breakpoints: ();
+@include add-breakpoint('small', 480px);
+@include add-breakpoint('small-max', (max-width: 479px));
+@include add-breakpoint('medium', 560px);
+@include add-breakpoint('medium-max', (max-width: 559px));
+@include add-breakpoint('medium-large', 560px 768px);
+@include add-breakpoint('large', 769px);
+@include add-breakpoint('large-max', (max-width: 768px));
+@include add-breakpoint('larger', 1000px);
+@include add-breakpoint('huge', 1200px);
+@include add-breakpoint('portrait', (orientation: portrait));
+@include add-breakpoint('landscape', (orientation: landscape));
